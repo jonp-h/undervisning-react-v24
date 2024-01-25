@@ -13,8 +13,8 @@ function App() {
   return (
     <div className=" content-stretch h-screen bg-slate-800">
       {/* <div className="grid grid-cols-4 pt-5 ">{card}</div> */}
-      {/* <InteractiveList /> */}
-      <InteractiveCounter />
+      <InteractiveList />
+      {/* <InteractiveCounter /> */}
     </div>
   );
 }

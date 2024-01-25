@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function InteractiveList() {
-  const liste = [1, 2, 3, 4];
+  const [liste, setListe] = useState([1, 2, 3, 4]);
 
   function clickEvent() {
-    liste.push(liste.length + 1);
+    //løst med nyyydelig spread syntax
+    setListe((prevListe) => [...liste, prevListe.length + 1]);
     console.log(liste);
   }
 
