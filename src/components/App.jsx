@@ -1,19 +1,20 @@
 import "../App.css";
+import CardData from "../lib/CardData";
 import Card from "./Card";
-import TekstBoks from "./TekstBoks";
+import InteractiveCounter from "./InteractiveCounter";
+import InteractiveList from "./InteractiveList";
+
+const card = CardData.map((data) => {
+  // spread syntax i ES6
+  return <Card {...data} />;
+});
 
 function App() {
   return (
-    <div className=" h-screen bg-slate-800">
-      <div className="grid grid-cols-3 pt-5 ">
-        <Card name="Benjamin Button" text="Lorem ipsum.." online="true" />
-        <Card name="Shroud" text="Veldig flink på dataspill." online="true" />
-        <Card name="Ninja" text="Ikke spesielt populær lengre." online="true" />
-      </div>
-      {/* <h1 className=" text-white">Hello </h1>
-      <p className="text-white">Dette er en paragraf</p>
-      <h2 className=" text-blue-400">Dette er en test</h2> */}
-      {/* <TekstBoks /> */}
+    <div className=" content-stretch h-screen bg-slate-800">
+      {/* <div className="grid grid-cols-4 pt-5 ">{card}</div> */}
+      {/* <InteractiveList /> */}
+      <InteractiveCounter />
     </div>
   );
 }
