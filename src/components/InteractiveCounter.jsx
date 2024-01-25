@@ -6,7 +6,8 @@ export default function InteractiveCounter() {
   const [counter, setCounter] = useState(1);
 
   function clickEvent() {
-    setCounter(counter + 1);
+    setCounter((oldValue) => oldValue + 1);
+    // 90% av tilfellene vil man ikke merke forskjell
   }
 
   return (
