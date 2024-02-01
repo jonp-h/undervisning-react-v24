@@ -1,9 +1,15 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function InteractiveCounter() {
   // hook
   const [counter, setCounter] = useState(1);
+
+  // kjører hver gang det skjer en endring (noe blir "mounted")
+  useEffect(() => {
+    alert("side effect!");
+  }, [counter]);
+  // ^kan legge til dependency for å bare kjøre når state endres (her counter)
 
   // lag en hook som lagrer en boolean, med intial state til false
   const [Innlogget, setInnlogget] = useState(false);
@@ -25,7 +31,7 @@ export default function InteractiveCounter() {
         Click me
       </button>
 
-      {/* Toggle innlogget */}
+      {/* Toggle innlogget. Kan ikke bruke funksjonskall, må refere direkte til funksjonen */}
       <button onClick={InnloggetEvent}>Logg inn!</button>
       {/* Viser innhold om bruker er innlogget */}
       {Innlogget ? (
